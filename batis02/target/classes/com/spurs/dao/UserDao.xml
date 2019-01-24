@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spurs.dao.UserDao">
+
+    <select id="findAll" resultType="User">
+        select * from user
+    </select>
+    <select id="findOne" resultMap="user" parameterType="list">
+        SELECT * from USER
+        <where>
+        <if test="list !=null and list.size()>0 ">
+                <foreach collection="list" separator="," close=")" item="d" open="id in ( ">
+                    #{d}
+                </foreach>
+
+        </if>
+        </where>
+    </select>
+
+    <select id="findById"  resultMap="UserAllAccount">
+        select u.*,a.ID as aid,a.UID,a.MONEY from user u left outer join account a on u.id =a.UID
+    </select>
+
+    <select id="findAccount" resultType="account" parameterType="list">
+        SELECT * from account
+        <where>
+            <if test="list!=null and list.size()>0" >
+                <foreach collection="list" open=" money in ( " item="a" close=" ) " separator=",">
+                    ${a}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <resultMap id="UserAllAccount" type="user">
+
+
+        <id property="id" column="id"></id>
+        <result column="username" property="username"></result>
+        <result column="address" property="address"></result>
+        <result column="sex" property="sex"></result>
+        <result column="birthday" property="birthday"></result>
+
+        <collection property="accounts" ofType="account" javaType="list">
+            <id property="id" column="aid"></id>
+            <result property="uid" column="uid"></result>
+            <result property="money" column="money"></result>
+        </collection>
+
+    </resultMap>
+
+    <resultMap id="user" type="com.spurs.domain.User">
+        <result property="username" column="username"></result>
+    </resultMap>
+</mapper>

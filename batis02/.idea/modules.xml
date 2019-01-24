@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/batis02.iml" filepath="$PROJECT_DIR$/batis02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Personalbatis/batis02 (1).iml" filepath="$PROJECT_DIR$/../Personalbatis/batis02 (1).iml" />
+      <module fileurl="file://F:/1/feiq/Recv Files/generatorSqlmapCustom/generatorSqlmapCustom.iml" filepath="F:/1/feiq/Recv Files/generatorSqlmapCustom/generatorSqlmapCustom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../myBatis/myBatis.iml" filepath="$PROJECT_DIR$/../myBatis/myBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../myBatis04/myBatis04.iml" filepath="$PROJECT_DIR$/../myBatis04/myBatis04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../myBatis04_2/myBatis04_2.iml" filepath="$PROJECT_DIR$/../myBatis04_2/myBatis04_2.iml" />
+    </modules>
+  </component>
+</project>
